@@ -55,12 +55,14 @@ func CloneOrOpen(ctx context.Context, dirpath, repoURL string) (*Repo, error) {
 // specified directory at dirpath.
 func Clone(ctx context.Context, dirpath, repoURL string) (*Repo, error) {
 	repo, err := git.PlainClone(dirpath, false, &git.CloneOptions{
-		URL:               repoURL,
-		Progress:          os.Stdout,
-		ReferenceName:     plumbing.HEAD,
-		SingleBranch:      true,
-		Depth:             1,
-		Tags:              git.NoTags,
+		URL:           repoURL,
+		Progress:      os.Stdout,
+		ReferenceName: plumbing.HEAD,
+		SingleBranch:  true,
+		Depth:         1,
+		Tags:          git.NoTags,
+		// .NET uses submodules for conformance tests.
+		// (There may be other examples too.)
 		RecurseSubmodules: git.DefaultSubmoduleRecursionDepth,
 	})
 	if err != nil {

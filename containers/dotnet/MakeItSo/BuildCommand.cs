@@ -32,6 +32,7 @@ internal class BuildCommand : ICommand
 
     public void Execute()
     {
+        // This is within google-cloud-dotnet (for now). It should be within the container.
         var processArguments = new List<string> { "./build.sh" };
 
         // The magic string "all" is used to say "just build all known APIs" which is

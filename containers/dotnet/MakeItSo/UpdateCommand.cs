@@ -37,6 +37,7 @@ internal class UpdateCommand : ICommand
     {
         MakeApiRootGitSafe();
 
+        // This is within google-cloud-dotnet (for now). It should be within the container.
         var processArguments = new List<string> { "./generateapis.sh" };
 
         // The magic string "all" is used to say "just generate all known APIs" which is
