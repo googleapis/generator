@@ -18,6 +18,7 @@ ls
 echo "ls piper"
 ls piper
 echo "ls piper_scm"
+ls piper_scm
 
 set -e
 
