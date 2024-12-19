@@ -43,6 +43,6 @@ mkdir $WORK_ROOT
 
 gcloud auth configure-docker us-central1-docker.pkg.dev
 cd github/generator
-ls /piper_scm/google3/third_party/googleapis/stable
+ls /piper/google3/third_party/googleapis/stable
 go run ./cmd/generator update-repo -language=dotnet \
-  -api-root=/piper_scm/google3/third_party/googleapis/stable
+  -api-root=/piper/google3/third_party/googleapis/stable
