@@ -13,13 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-echo "ls"
-ls
-echo "ls piper"
-ls piper
-echo "ls piper_scm"
-ls piper_scm
-
 set -e
 
 install_go() {
@@ -49,7 +42,6 @@ WORK_ROOT=$KOKORO_ARTIFACTS_DIR/cli-work-root
 mkdir $WORK_ROOT
 
 gcloud auth configure-docker us-central1-docker.pkg.dev
-ls piper_scm
 cd github/generator
 go run ./cmd/generator update-repo -language=dotnet \
-  -api-root=/piper/google3/third_party/googleapis/stable
+  -api-root=../../piper/google3/third_party/googleapis/stable
