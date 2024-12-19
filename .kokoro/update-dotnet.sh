@@ -42,5 +42,6 @@ WORK_ROOT=$KOKORO_ARTIFACTS_DIR/cli-work-root
 mkdir $WORK_ROOT
 
 gcloud auth configure-docker us-central1-docker.pkg.dev
-go run ./github/generator/cmd/generator update-repo -language=dotnet \
-  -api-root=./piper_scm/google3/third_party/googleapis/stable
+cd github/generator
+go run ./cmd/generator update-repo -language=dotnet \
+  -api-root=/piper_scm/google3/third_party/googleapis/stable
